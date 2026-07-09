@@ -1,0 +1,35 @@
+{
+  "name": "character-creator-ai",
+  "version": "1.0.0",
+  "description": "A fully offline desktop application for creating unique AI characters with professional prompt generation",
+  "main": "dist/main.js",
+  "homepage": "./",
+  "author": "Character Creator AI",
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:main\" \"npm run dev:renderer\"",
+    "dev:main": "tsc --watch --sourceMap src/main.ts --outDir dist",
+    "dev:renderer": "vite",
+    "build": "npm run build:main && npm run build:renderer",
+    "build:main": "tsc src/main.ts --outDir dist",
+    "build:renderer": "vite build",
+    "start": "electron dist/main.js",
+    "package": "electron-builder",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "concurrently": "^8.2.0",
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.0",
+    "typescript": "^5.3.0",
+    "vite": "^5.0.0"
+  }
+}
